@@ -14,9 +14,9 @@ fi
 ln -s $HOME/ghidra.bin ghidra.bin # hack
 
 cd $START_DIR/ghidra
-gradle --init-script gradle/support/fetchDependencies.gradle init
-gradle yajswDevUnpack
-gradle buildGhidra
+gradle --init-script gradle/support/fetchDependencies.gradle init --parallel
+gradle yajswDevUnpack --parallel
+gradle buildGhidra --parallel
 
 # Tests
 # Xvfb :99 -nolisten tcp & export DISPLAY=:99
